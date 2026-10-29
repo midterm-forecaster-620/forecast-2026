@@ -9,7 +9,7 @@ window.SITE_CONFIG = {
   // The name shown at the top of your site. A nickname or made-up forecaster
   // name is fine and recommended. Do not put your real name, email, photo,
   // or anything else that identifies you on this site.
-  forecaster_name: "",
+  forecaster_name: "midterm-forecaster-620",
 
   // One short line under the name (optional).
   tagline: "",
@@ -25,8 +25,8 @@ window.SITE_CONFIG = {
   //   "A fundamentals-only model (no polls). Each race's predicted Democratic share combines the district's partisan lean, incumbency, and a forecast of the national House vote from presidential approval, gas prices, income and the midterm penalty.",
   //   "Uncertainty combines one national error shared by every race with a separate error for each race. Seat totals come from 10,000 simulated elections.",
   method: [
-    "",
-    ""
+    "My forecast combines district or state partisanship (PVI), incumbency, fundraising, and a prediction of the national Democratic House vote. The national forecast uses generic-ballot polling, changes in gas prices, and real disposable income. I also account for changes in the effect of incumbency over time.",
+    "Uncertainty combines one national error shared across races with separate errors for individual races. I estimate these errors using historical election results and out-of-sample predictions. I then simulate 10,000 elections to estimate possible House and Senate seat totals and the probability that Democrats win control of each chamber."
   ],
 
   // Your data files. Leave these alone unless you renamed your files.
