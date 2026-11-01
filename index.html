@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,6 +15,7 @@
     <h1 id="title">My 2026 Midterm Forecast</h1>
     <p id="tagline" class="tagline" hidden></p>
     <p id="asof" class="asof"></p>
+    <p id="election-countdown" class="asof"></p>
   </div>
 </header>
 
@@ -92,5 +94,35 @@
 <script src="config.js"></script>
 <script src="assets/core.js"></script>
 <script src="assets/app.js"></script>
+
+<script>
+(function () {
+  const countdown = document.getElementById("election-countdown");
+  const electionTime = Date.parse("2026-11-03T18:00:00-05:00");
+
+  function updateCountdown() {
+    const remaining = electionTime - Date.now();
+
+    if (remaining <= 0) {
+      countdown.textContent = "Results are coming in";
+      return;
+    }
+
+    const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+
+    countdown.textContent =
+      "Election Day countdown: " +
+      days + " day" + (days === 1 ? "" : "s") + ", " +
+      hours + " hour" + (hours === 1 ? "" : "s") +
+      " until polls close";
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
+})();
+</script>
 </body>
 </html>
